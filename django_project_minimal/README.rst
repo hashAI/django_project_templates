@@ -1,7 +1,7 @@
 Django Project Minimal
 ===============
 
-Boiler Plates for Django Projects
+Minimal Boiler Plate for Django Projects
 
 :License: MIT
 
