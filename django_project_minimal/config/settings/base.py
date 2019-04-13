@@ -68,6 +68,7 @@ THIRD_PARTY_APPS = [
     # 'allauth.account',
     # 'allauth.socialaccount',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 LOCAL_APPS = [
     'expense_manager.users.apps.UsersAppConfig',
@@ -200,6 +201,12 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 2,
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
+
 # http://django-crispy-forms.readthedocs.io/en/latest/install.html#template-packs
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # FIXTURES
@@ -215,7 +222,7 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/dev/ref/settings/#session-cookie-httponly
 SESSION_COOKIE_HTTPONLY = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#csrf-cookie-httponly
-CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_HTTPONLY = False
 # https://docs.djangoproject.com/en/dev/ref/settings/#secure-browser-xss-filter
 SECURE_BROWSER_XSS_FILTER = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#x-frame-options
